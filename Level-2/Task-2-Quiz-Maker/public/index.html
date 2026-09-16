@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maker - Create and Take Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">QuizMaker</div>
+            <div class="nav-links">
+                <a href="#" id="home-link" class="nav-link active">Quizzes</a>
+                <a href="#" id="create-link" class="nav-link">Create Quiz</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home-section" class="section">
+        <!-- Hero -->
+        <div class="hero">
+            <div class="container">
+                <h1>Create & Take Quizzes</h1>
+                <p>Build your own quizzes or test your knowledge with existing ones</p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters">
+            <div class="container">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="General Knowledge">General Knowledge</option>
+                    <option value="Science">Science</option>
+                    <option value="Technology">Technology</option>
+                    <option value="History">History</option>
+                    <option value="Geography">Geography</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Entertainment">Entertainment</option>
+                </select>
+                <select id="difficulty-filter">
+                    <option value="">All Difficulties</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Quizzes List -->
+        <div class="container">
+            <div id="quizzes-list" class="quizzes-grid">
+                <div class="loading">Loading quizzes...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Quiz Section -->
+    <section id="create-section" class="section" style="display: none;">
+        <div class="container">
+            <h2>Create New Quiz</h2>
+            <form id="quiz-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Quiz Title *</label>
+                        <input type="text" id="quiz-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="quiz-category" required>
+                            <option value="">Select Category</option>
+                            <option value="General Knowledge">General Knowledge</option>
+                            <option value="Science">Science</option>
+                            <option value="Technology">Technology</option>
+                            <option value="History">History</option>
+                            <option value="Geography">Geography</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Entertainment">Entertainment</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Difficulty *</label>
+                        <select id="quiz-difficulty" required>
+                            <option value="Easy">Easy</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Hard">Hard</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Created By</label>
+                        <input type="text" id="quiz-creator" placeholder="Your name (optional)">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="quiz-description" rows="3"></textarea>
+                </div>
+
+                <h3>Questions</h3>
+                <div id="questions-container"></div>
+                
+                <button type="button" id="add-question-btn" class="btn btn-secondary">+ Add Question</button>
+                <button type="submit" class="btn btn-primary">Create Quiz</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Take Quiz Section -->
+    <section id="quiz-section" class="section" style="display: none;">
+        <div class="container">
+            <div id="quiz-content"></div>
+        </div>
+    </section>
+
+    <!-- Result Section -->
+    <section id="result-section" class="section" style="display: none;">
+        <div class="container">
+            <div id="result-content"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board - Find Your Dream Job</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">JobBoard</div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#jobs" class="nav-link">Jobs</a>
+                <a href="#post-job" class="nav-link">Post a Job</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Find Your Dream Job</h1>
+            <p>Discover thousands of job opportunities with all the information you need</p>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Job title, keywords, or company">
+                <input type="text" id="location-input" placeholder="Location">
+                <button id="search-btn" class="btn btn-primary">Search Jobs</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="filters" id="jobs">
+        <div class="container">
+            <h2>Browse Jobs</h2>
+            <div class="filter-controls">
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Internship">Internship</option>
+                </select>
+                <button id="clear-filters" class="btn btn-secondary">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs List -->
+    <section class="jobs-section">
+        <div class="container">
+            <div id="jobs-list" class="jobs-grid">
+                <div class="loading">Loading jobs...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Job Modal -->
+    <div id="post-job-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Post a Job</h2>
+            <form id="post-job-form">
+                <div class="form-group">
+                    <label>Job Title *</label>
+                    <input type="text" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Company *</label>
+                    <input type="text" name="company" required>
+                </div>
+                <div class="form-group">
+                    <label>Location *</label>
+                    <input type="text" name="location" required>
+                </div>
+                <div class="form-group">
+                    <label>Job Type *</label>
+                    <select name="type" required>
+                        <option value="">Select Type</option>
+                        <option value="Full-time">Full-time</option>
+                        <option value="Part-time">Part-time</option>
+                        <option value="Contract">Contract</option>
+                        <option value="Internship">Internship</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Salary Range</label>
+                    <input type="text" name="salary" placeholder="e.g., $50,000 - $70,000">
+                </div>
+                <div class="form-group">
+                    <label>Job Description *</label>
+                    <textarea name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Requirements *</label>
+                    <textarea name="requirements" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Post Job</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div id="job-details-modal" class="modal">
+        <div class="modal-content modal-large">
+            <span class="close">&times;</span>
+            <div id="job-details"></div>
+        </div>
+    </div>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Apply for Job</h2>
+            <form id="application-form">
+                <input type="hidden" id="application-job-id">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Resume Link (Optional)</label>
+                    <input type="url" name="resume" placeholder="https://...">
+                </div>
+                <div class="form-group">
+                    <label>Cover Letter</label>
+                    <textarea name="coverLetter" rows="5"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
